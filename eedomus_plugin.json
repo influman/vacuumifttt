@@ -1,0 +1,61 @@
+{
+	"plugin_id": "vacuumifttt",
+	"name_fr": "Vacuum via IFTTT",
+	"icon": "vacuumifttt.png",
+	"version": "1.0",
+	"creation_date": "2018-12-19",
+	"modification_date": "2018-12-19",
+	"author": "Influman",
+	"description_fr": "Contrôle d'un aspirateur connecté via <a href='https://ifttt.com'>IFTTT</a><br>NB : Ce plug-in installe simplement un périphérique standard pour déclencher les Webhooks (THIS) IFTTT de contrôle d'aspirateur connecté (THAT)<br>Works with IFTTT : iRobot Roomba, Neato, Samsung...",
+	"description_en": "",
+	"description_es": "",
+	"description_it": "",
+	"description_de": "",
+	"forum_link": "",
+	"parameters": 
+	[
+		{
+			"parameter": "IFTTT_KEY", 
+			"description": "Key Webhooks IFTTT :",
+			"xtype": "textfield",
+			"default_value": "",
+			"field": "width:250, allowBlank:false"
+        }
+	 ],
+	"scripts":
+	[
+		{
+			"name": "vacuumifttt.php"
+		}
+	],
+	"devices":
+    [
+		{
+			"device_id": "control",
+			"module_id": "41",
+			"type": "http",
+			"name_fr": "Vacuum IFTTT",
+			"icon": "vacuumcontrol.png",
+			"utilisation_id": "43",
+			"parameters":
+			{
+				"VAR1": "plugin.parameters.IFTTT_KEY",
+				"VAR2": "",
+				"VAR3": "",
+				"value_type": "list",
+				"ignore_errors": 3,
+				"RAW_URL": "",
+				"RAW_XPATH": "",
+				"POLLING": "0"
+			},
+			"values":
+			[
+				{ "value": "vacuum_stop", "description": "Stop", "icon": "vacuumstop.png", "http_url": "http://localhost/script/?exec=vacuumifttt.php", "http_type": "GET",  "http_params": "&value=[RAW_VALUE]&key=[VAR1]" },
+				{ "value": "vacuum_start", "description": "Start", "icon": "vacuumstart.png", "http_url": "http://localhost/script/?exec=vacuumifttt.php", "http_type": "GET",  "http_params": "&value=[RAW_VALUE]&key=[VAR1]" },
+				{ "value": "vacuum_dock", "description": "Dock", "icon": "vacuumdock.png", "http_url": "http://localhost/script/?exec=vacuumifttt.php", "http_type": "GET",  "http_params": "&value=[RAW_VALUE]&key=[VAR1]" },
+				{ "value": "99", "description": "Mission complete", "hidden": 1, "icon": "vacuumok.png", "http_url": "http://localhost/script/?exec=vacuumifttt.php", "http_type": "GET",  "http_params": "&value=[RAW_VALUE]&key=[VAR1]" }
+			]
+		}
+		
+	]
+}
