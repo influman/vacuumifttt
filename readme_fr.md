@@ -16,7 +16,9 @@ Exemple pour les aspirateurs Roomba d'iRobot :
   * Pour la partie +THAT, cherchez iRobot, appareillez votre compte iRobot le cas échéant puis sélectionnez "Start"  
   * Sauvegarder votre Applet IFTTT
   
-  * Créez deux autres applets similaires pour les webhooks "vacuum_stop" et "vacuum_dock"  
+  * Créez 1 autre applet similaire pour le webhook "vacuum_stop"  
+  * Créez 1 autre applet similaire pour le webhook "vacuum_dock"  
+ 
   
     
 ### Ajout du périphérique eedomus

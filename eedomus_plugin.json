@@ -2,7 +2,7 @@
 	"plugin_id": "vacuumifttt",
 	"name_fr": "Vacuum via IFTTT",
 	"icon": "vacuumifttt.png",
-	"version": "1.0",
+	"version": "1.01",
 	"creation_date": "2018-12-19",
 	"modification_date": "2018-12-19",
 	"author": "Influman",
